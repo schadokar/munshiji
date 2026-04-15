@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Munshiji — Your Personal Indian Finance Companion</title>
+  <meta name="description"
+    content="Munshiji is a local-first personal finance app. Track every account, asset, loan, and goal — analysed privately on your device.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Munshiji — Your Personal Indian Finance Companion">
+  <meta property="og:description"
+    content="Local-first personal finance. Track every account, asset, loan, and goal — analysed privately on your device.">
+  <meta property="og:image" content="https://munshiji.xyz/public/munshiji-main.png">
+  <meta property="og:url" content="https://munshiji.xyz">
+  <meta property="og:type" content="website">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Munshiji — Your Personal Indian Finance Companion">
+  <meta name="twitter:description"
+    content="Local-first personal finance. Track every account, asset, loan, and goal — analysed privately on your device.">
+  <meta name="twitter:image" content="https://munshiji.xyz/public/munshiji-main.png">
+  <!-- PWA / Mobile -->
+  <meta name="theme-color" content="#F5EFE2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+   <link rel="icon" type="image/x-icon" href="public/favicon.png">
+  <!-- <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📒</text></svg>"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner container">
+      <a href="/" class="nav__logo" aria-label="Munshiji home">
+        <span class="nav__wordmark">Munshiji</span>
+      </a>
+      <button class="nav__hamburger" id="nav-toggle" aria-expanded="false" aria-controls="nav-links"
+        aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#early-access" class="nav__cta">Get Early Access</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero section" id="hero">
+      <div class="container hero__inner">
+
+        <div class="hero__text">
+          <p class="hero__label">Your Personal Finance Ledger-Keeper</p>
+          <h1 class="hero__h1">Your finances, finally in your own ledger.</h1>
+          <p class="hero__sub">Munshiji is a local-first finance companion. Track every account, asset, loan, and goal —
+            analysed privately on your device.</p>
+
+          <form name="early-access" method="POST" data-netlify="true" class="email-form" id="hero-form">
+            <input type="hidden" name="form-name" value="early-access">
+            <div class="form-row">
+              <label for="hero-email" class="sr-only">Email address</label>
+              <input type="email" id="hero-email" name="email" placeholder="your@email.com" required
+                autocomplete="email">
+              <button type="submit" class="btn-primary crayon-border">Get Early Access</button>
+            </div>
+            <p class="form-success" hidden aria-live="polite">You're on the list. We'll be in touch.</p>
+            <p class="form-error" hidden aria-live="polite">Something went wrong. Please try again.</p>
+          </form>
+
+          <p class="hero__trust">No sign-up required. No cloud. Your data never leaves your device.</p>
+        </div>
+
+        <div class="hero__mascot">
+          <div class="mascot-circle">
+            <img src="public/munshiji-main.png"
+              alt="Munshiji, a traditional Indian scribe writing in a ledger surrounded by gold coins and an oil lamp"
+              width="1408" height="768" loading="eager">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip" role="region" aria-label="Trust indicators">
+      <div class="container trust-strip__inner">
+        <div class="trust-badge">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+          <span>100% Local-First</span>
+        </div>
+        <div class="trust-badge">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
+            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+            <line x1="1" y1="1" x2="23" y2="23" />
+          </svg>
+          <span>Zero Tracking</span>
+        </div>
+        <div class="trust-badge">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <span>Built for India</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,15 C150,5 250,25 400,15 C550,5 650,25 800,15 C950,5 1050,25 1200,15" stroke="#B5553C"
+          stroke-width="1.5" fill="none" opacity="0.5" />
+      </svg>
+    </div>
+
+    <!-- PROBLEM FRAMING -->
+    <section class="section problem" data-animate>
+      <div class="container">
+        <h2 class="problem__h2">Scattered accounts.<br>Fragmented insight.</h2>
+        <div class="problem__grid">
+          <div class="problem__item">
+            <p class="problem__lead">Everything everywhere.</p>
+            <p>Savings in 4 banks, investments in 3 apps, loans on paper — no single view of your financial life.</p>
+          </div>
+          <div class="problem__item">
+            <p class="problem__lead">Your data as a product.</p>
+            <p>Generic finance apps upload your data to their servers. Munshiji is different — your data stays on your
+              device, always.</p>
+          </div>
+          <div class="problem__item">
+            <p class="problem__lead">Insights built for you.</p>
+            <p>You deserve analysis from your real numbers — not population averages that have nothing to do with your
+              life.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE OVERVIEW -->
+    <section class="section features" id="features" data-animate>
+      <div class="container">
+        <h2 class="features__h2">Everything your money touches,<br>in one ledger.</h2>
+        <div class="features__grid">
+
+          <div class="feature-tile">
+            <div class="feature-tile__header">
+              <svg class="feature-tile__icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+              <h3>Accounts</h3>
+            </div>
+            <p>The Ledger of Holdings — banks, wallets, and cash in one view</p>
+          </div>
+
+          <div class="feature-tile">
+            <div class="feature-tile__header">
+              <svg class="feature-tile__icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline points="17 6 23 6 23 12" />
+              </svg>
+              <h3>Assets</h3>
+            </div>
+            <p>The Book of Wealth — mutual funds, stocks, gold, real estate</p>
+          </div>
+
+          <div class="feature-tile">
+            <div class="feature-tile__header">
+              <svg class="feature-tile__icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                <line x1="1" y1="10" x2="23" y2="10" />
+              </svg>
+              <h3>Liabilities</h3>
+            </div>
+            <p>The Ledger of Outgoings — loans, credit cards, EMIs tracked clearly</p>
+          </div>
+
+          <div class="feature-tile">
+            <div class="feature-tile__header">
+              <svg class="feature-tile__icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+              <h3>Goals</h3>
+            </div>
+            <p>The Scroll of Aspirations — milestones, targets, and timelines in focus</p>
+          </div>
+
+          <div class="feature-tile">
+            <div class="feature-tile__header">
+              <svg class="feature-tile__icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <h3>Insurance</h3>
+            </div>
+            <p>The Shield Register — policies, premiums, and coverage gaps at a glance</p>
+          </div>
+
+          <div class="feature-tile">
+            <div class="feature-tile__header">
+              <svg class="feature-tile__icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="2" x2="12" y2="6" />
+                <line x1="12" y1="18" x2="12" y2="22" />
+                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />
+                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />
+                <line x1="2" y1="12" x2="6" y2="12" />
+                <line x1="18" y1="12" x2="22" y2="12" />
+                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />
+                <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" />
+              </svg>
+              <h3>Insights</h3>
+            </div>
+            <p>The Munshi's Counsel — personalised analysis, entirely on your device</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="section privacy" id="privacy" data-animate>
+      <div class="container">
+        <h2 class="privacy__h2">Your ledger. Your device.<br>Full stop.</h2>
+
+        <!-- Diagram -->
+        <div class="privacy__diagram" aria-label="Diagram: Munshiji runs on your device, not in the cloud" role="img">
+          <div class="privacy__diagram-inner">
+            <div class="privacy__node">
+              <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+              <span>Your Browser</span>
+            </div>
+            <div class="privacy__arrow" aria-hidden="true">↔</div>
+            <span class="sr-only">connects to</span>
+            <div class="privacy__node privacy__node--brand">
+              <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+              </svg>
+              <span>Munshiji</span>
+            </div>
+            <div class="privacy__blocked">
+              <div class="privacy__blocked-line">
+                <span class="privacy__x">✕</span>
+              </div>
+              <div class="privacy__node privacy__node--muted">
+                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                  <line x1="6" y1="6" x2="6.01" y2="6" />
+                  <line x1="6" y1="18" x2="6.01" y2="18" />
+                </svg>
+                <span>Cloud / Our Servers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="privacy__content">
+          <div class="privacy__item">
+            <h3>What "local-first" means</h3>
+            <p>Every calculation, every insight, every data transformation happens entirely on your device. Nothing is
+              sent over the network. Munshiji has no servers to breach.</p>
+          </div>
+          <div class="privacy__item">
+            <h3>What we never collect</h3>
+            <p>No account numbers. No balances. No transaction history. No identity. We cannot see your data because we
+              never receive it — not even anonymised.</p>
+          </div>
+          <div class="privacy__item">
+            <h3>How your data enters Munshiji</h3>
+            <p>Manual entry, file import (CSV/Excel), or bank statement PDF parsing — all processed on-device. You
+              decide what goes in. You own what comes out.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIGHTS SHOWCASE -->
+    <section class="section insights" id="insights" data-animate>
+      <div class="container insights__inner">
+
+        <div class="insights__mockup">
+          <div class="insight-frame" aria-label="Sample Munshiji insight: SIP gap analysis" role="img">
+            <div class="insight-frame__titlebar">
+              <span class="insight-frame__dot"></span>
+              <span class="insight-frame__dot"></span>
+              <span class="insight-frame__dot"></span>
+              <span class="insight-frame__title">Munshiji Insight</span>
+            </div>
+            <div class="insight-frame__body">
+              <p class="insight-frame__tag">Retirement Goal &middot; SIP</p>
+              <p class="insight-frame__headline">At your current SIP rate, your retirement goal is <strong>18 months
+                  short.</strong></p>
+              <p class="insight-frame__detail">Increasing your SIP from <span class="insight-amount">₹12,000</span> to
+                <span class="insight-amount insight-amount--target">₹14,500/mo</span> closes the gap.
+              </p>
+              <div class="insight-bars">
+                <div class="insight-bar-row">
+                  <span class="insight-bar-label">Current</span>
+                  <div class="insight-bar-track">
+                    <div class="insight-bar insight-bar--current"></div>
+                  </div>
+                </div>
+                <div class="insight-bar-row">
+                  <span class="insight-bar-label">Target</span>
+                  <div class="insight-bar-track">
+                    <div class="insight-bar insight-bar--target"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="insight-frame__footer">Calculated entirely on your device.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="insights__text">
+          <h2>Insights made for your numbers,<br>not averages.</h2>
+          <p class="insights__munshi-voice">"Let me examine these numbers more carefully…" — Your Munshi</p>
+          <ul class="insights__list">
+            <li>
+              <strong>On-device intelligence.</strong> Every projection, gap analysis, and allocation suggestion runs
+              entirely in your browser. Nothing leaves your machine.
+            </li>
+            <li>
+              <strong>Built for Indian instruments.</strong> SIPs, PPF, NPS, ELSS, FDs, gold bonds — Munshiji
+              understands how Indian personal finance actually works.
+            </li>
+            <li>
+              <strong>Contextual, not generic.</strong> Insights come from your actual ledger — not population averages,
+              not sponsored recommendations.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- APP PREVIEW: Notion-style Ghost UI -->
+    <section class="section app-preview" id="app-preview" data-animate>
+      <div class="container">
+        <h2>A peek inside your ledger.</h2>
+        <p class="subtitle">Clean, document-style interface — like your personal Notion for finances</p>
+
+        <div class="app-preview__frame">
+          <div class="app-preview__titlebar">
+            <span class="app-preview__dot"></span>
+            <span class="app-preview__dot"></span>
+            <span class="app-preview__dot"></span>
+            <span class="app-preview__title">Munshiji</span>
+          </div>
+          <div class="app-preview__body">
+            <aside class="app-preview__sidebar">
+              <div class="app-preview__sidebar-item app-preview__sidebar-item--active">
+                <svg class="app-preview__sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+                Dashboard
+              </div>
+              <div class="app-preview__sidebar-item">
+                <svg class="app-preview__sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                  <polyline points="17 6 23 6 23 12" />
+                </svg>
+                Assets
+              </div>
+              <div class="app-preview__sidebar-item">
+                <svg class="app-preview__sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                  <line x1="1" y1="10" x2="23" y2="10" />
+                </svg>
+                Liabilities
+              </div>
+              <div class="app-preview__sidebar-item">
+                <svg class="app-preview__sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+                Goals
+              </div>
+              <div class="app-preview__sidebar-item">
+                <svg class="app-preview__sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                Insurance
+              </div>
+              <div class="app-preview__sidebar-item">
+                <svg class="app-preview__sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="2" x2="12" y2="6" />
+                  <line x1="12" y1="18" x2="12" y2="22" />
+                  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />
+                  <line x1="2" y1="12" x2="6" y2="12" />
+                </svg>
+                Insights
+              </div>
+            </aside>
+            <div class="app-preview__content">
+              <h3 class="app-preview__page-title">Your Financial Dashboard</h3>
+              <p class="app-preview__page-sub">Last updated just now &middot; All data on this device</p>
+
+              <div class="app-preview__mini-cards">
+                <div class="app-preview__mini-card">
+                  <p class="app-preview__mini-label">Net Worth</p>
+                  <p class="app-preview__mini-value">₹ 48,20,000</p>
+                </div>
+                <div class="app-preview__mini-card">
+                  <p class="app-preview__mini-label">Assets</p>
+                  <p class="app-preview__mini-value app-preview__mini-value--sage">₹ 52,40,000</p>
+                </div>
+                <div class="app-preview__mini-card">
+                  <p class="app-preview__mini-label">Liabilities</p>
+                  <p class="app-preview__mini-value app-preview__mini-value--terracotta">₹ 4,20,000</p>
+                </div>
+              </div>
+
+              <div class="app-preview__chart" style="margin-top: 1.5rem;">
+                <p class="app-preview__chart-title">Net Worth Trend</p>
+                <svg class="app-preview__chart-svg" viewBox="0 -14 400 134" xmlns="http://www.w3.org/2000/svg"
+                  aria-label="Net worth trend mini chart" role="img">
+                  <defs>
+                    <linearGradient id="miniLineGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#6B8E6F" stop-opacity="0.25" />
+                      <stop offset="100%" stop-color="#6B8E6F" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <!-- Light grid lines -->
+                  <line x1="40" y1="95" x2="380" y2="95" stroke="rgba(43,38,34,0.08)" stroke-width="1" />
+                  <line x1="40" y1="65" x2="380" y2="65" stroke="rgba(43,38,34,0.05)" stroke-width="1"
+                    stroke-dasharray="4 4" />
+                  <line x1="40" y1="35" x2="380" y2="35" stroke="rgba(43,38,34,0.05)" stroke-width="1"
+                    stroke-dasharray="4 4" />
+                  <!-- Y labels -->
+                  <text x="36" y="98" font-size="8" text-anchor="end" fill="rgba(43,38,34,0.35)"
+                    font-family="Inter,system-ui,sans-serif">0</text>
+                  <text x="36" y="68" font-size="8" text-anchor="end" fill="rgba(43,38,34,0.35)"
+                    font-family="Inter,system-ui,sans-serif">18L</text>
+                  <text x="36" y="38" font-size="8" text-anchor="end" fill="rgba(43,38,34,0.35)"
+                    font-family="Inter,system-ui,sans-serif">36L</text>
+                  <!-- X labels -->
+                  <text x="55" y="108" font-size="7" text-anchor="middle" fill="rgba(43,38,34,0.35)"
+                    font-family="Inter,system-ui,sans-serif">Jan</text>
+                  <text x="115" y="108" font-size="7" text-anchor="middle" fill="rgba(43,38,34,0.35)"
+                    font-family="Inter,system-ui,sans-serif">Mar</text>
+                  <text x="175" y="108" font-size="7" text-anchor="middle" fill="rgba(43,38,34,0.35)"
+                    font-family="Inter,system-ui,sans-serif">May</text>
+                  <text x="235" y="108" font-size="7" text-anchor="middle" fill="rgba(43,38,34,0.35)"
+                    font-family="Inter,system-ui,sans-serif">Jul</text>
+                  <text x="295" y="108" font-size="7" text-anchor="middle" fill="rgba(43,38,34,0.35)"
+                    font-family="Inter,system-ui,sans-serif">Sep</text>
+                  <text x="355" y="108" font-size="7" text-anchor="middle" fill="rgba(43,38,34,0.35)"
+                    font-family="Inter,system-ui,sans-serif">Nov</text>
+                  <!-- Area fill -->
+                  <path
+                    d="M55,85 L85,84 L115,80 L145,73 L175,69 L205,60 L235,53 L265,45 L295,37 L325,27 L355,18 L370,14 L370,95 L55,95 Z"
+                    fill="url(#miniLineGrad)" />
+                  <!-- Trend line -->
+                  <polyline points="55,85 85,84 115,80 145,73 175,69 205,60 235,53 265,45 295,37 325,27 355,18 370,14"
+                    fill="none" stroke="#6B8E6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- End dot -->
+                  <circle cx="370" cy="14" r="3.5" fill="#6B8E6F" stroke="white" stroke-width="1.5" />
+                  <!-- End value label -->
+                  <text x="370" y="10" font-size="9" text-anchor="middle" fill="#6B8E6F"
+                    font-family="Inter,system-ui,sans-serif" font-weight="600" dy="-4">₹48L</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq" data-animate>
+      <div class="container">
+        <h2 class="faq__h2">Questions</h2>
+        <div class="faq__list">
+
+          <details class="faq__item">
+            <summary class="faq__question">Is Munshiji free?</summary>
+            <div class="faq__answer">
+              <p>Yes. Munshiji is free to use. There are no paywalls on core features. We may offer optional premium
+                features in the future, but the core finance tracking will always be free.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">How do you make money?</summary>
+            <div class="faq__answer">
+              <p>We don't monetise your data — ever. We plan to offer optional premium features (advanced reports, goal
+                coaching) for a small one-time or subscription fee. Your data is yours, not ours to sell.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">What happens to my data if my machine crashes?</summary>
+            <div class="faq__answer">
+              <p>Munshiji lets you export your data as an encrypted backup file at any time — save it to a USB drive,
+                cloud storage, or anywhere you choose. Restore it on any machine. We never hold a copy.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">Does it support Indian banks and instruments like SIP, PPF, NPS, ELSS?
+            </summary>
+            <div class="faq__answer">
+              <p>Yes. Munshiji is built specifically for Indian financial instruments — SIPs, PPF, NPS, ELSS, FDs, RDs,
+                gold bonds, real estate, and more. Indian number formatting (₹1,00,000) throughout.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">Is Munshiji open source?</summary>
+            <div class="faq__answer">
+              <p>We are evaluating open-sourcing the core engine. Updates will be posted here. Our privacy commitment is
+                unconditional regardless of open-source status.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">How is this different from Walnut, MoneyView, or INDmoney?</summary>
+            <div class="faq__answer">
+              <p>Those apps require SMS/email access or account linking — your data goes to their servers. Munshiji is
+                the opposite: everything stays on your device. We also go deeper on assets, insurance, and goal
+                modelling than transaction-tracking apps.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">Does it run on my laptop or desktop?</summary>
+            <div class="faq__answer">
+              <p>Yes — that's the primary use case. Munshiji runs entirely in your browser on any laptop or desktop. You
+                can also self-host it on your own machine. Mobile browsers are supported too, so you can check your
+                ledger on the go.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">How do I import existing data?</summary>
+            <div class="faq__answer">
+              <p>You can import data via CSV/Excel files or bank statement PDFs. All parsing happens on your device. We
+                also support manual entry for assets and instruments that can't be imported automatically.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,15 C150,5 400,25 600,12 C800,4 1000,22 1200,15" stroke="#B5553C" stroke-width="1.5" fill="none"
+          opacity="0.5" />
+      </svg>
+    </div>
+
+    <!-- EARLY ACCESS CTA BAND -->
+    <section class="section early-access" id="early-access" data-animate>
+      <div class="container early-access__inner">
+        <div class="early-access__text">
+          <h2>Be first to know when Munshiji launches.</h2>
+          <p>Join the early-access list. No spam. Unsubscribe anytime.</p>
+
+          <form name="early-access" method="POST" data-netlify="true" class="email-form" id="cta-form">
+            <input type="hidden" name="form-name" value="early-access">
+            <div class="form-row">
+              <label for="cta-email" class="sr-only">Email address</label>
+              <input type="email" id="cta-email" name="email" placeholder="your@email.com" required
+                autocomplete="email">
+              <button type="submit" class="btn-primary">Get Early Access</button>
+            </div>
+            <p class="form-success" hidden aria-live="polite">You're on the list. We'll be in touch.</p>
+            <p class="form-error" hidden aria-live="polite">Something went wrong. Please try again.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <div class="footer__mark">
+            <img src="public/munshiji-main.png" alt="" aria-hidden="true" width="1408" height="768" loading="lazy">
+          </div>
+          <div>
+            <p class="footer__wordmark">Munshiji</p>
+            <p class="footer__tagline">Your Personal Indian Finance Companion</p>
+          </div>
+        </div>
+
+        <div class="footer__links">
+          <div class="footer__col">
+            <p class="footer__col-title">Product</p>
+            <ul role="list">
+              <li><a href="#features">Features</a></li>
+              <li><a href="#privacy">Privacy</a></li>
+              <li><a href="#early-access">Early Access</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Legal</p>
+            <ul role="list">
+              <li><span class="footer__coming-soon">Privacy Policy — coming soon</span></li>
+              <li><span class="footer__coming-soon">Terms of Use — coming soon</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>Made with care in India. &copy; 2026 Munshiji.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta" id="mobile-cta" aria-hidden="true">
+    <a href="#early-access" class="btn-primary mobile-cta__btn">Get Early Access</a>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* --- Nav: scroll shadow --- */
+      const nav = document.getElementById('nav');
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 8);
+      }, { passive: true });
+
+      /* --- Nav: mobile hamburger toggle --- */
+      const navToggle = document.getElementById('nav-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      navToggle.addEventListener('click', function () {
+        const open = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', String(open));
+      });
+
+      // Close mobile nav when a link is clicked
+      navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      /* --- Scroll fade-in --- */
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('[data-animate]').forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        // Fallback: show all immediately
+        document.querySelectorAll('[data-animate]').forEach(function (el) {
+          el.classList.add('visible');
+        });
+      }
+
+      /* --- Email forms: success state swap --- */
+      document.querySelectorAll('.email-form').forEach(function (form) {
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          const formRow = form.querySelector('.form-row');
+          const successMsg = form.querySelector('.form-success');
+          const submitBtn = form.querySelector('button[type="submit"]');
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending\u2026';
+
+          try {
+            await fetch('/', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: new URLSearchParams(new FormData(form)).toString()
+            });
+            formRow.hidden = true;
+            successMsg.hidden = false;
+          } catch (_err) {
+            // On error, re-enable so user can try again
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Get Early Access';
+            var errorMsg = form.querySelector('.form-error');
+            if (errorMsg) errorMsg.hidden = false;
+          }
+        });
+      });
+
+      /* --- Sticky mobile CTA bar: show after hero, hide near #early-access --- */
+      const mobileCta = document.getElementById('mobile-cta');
+      const heroSection = document.getElementById('hero');
+      const earlyAccessSection = document.getElementById('early-access');
+
+      if (mobileCta && heroSection && earlyAccessSection) {
+        const ctaObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.target === heroSection) {
+              mobileCta.classList.toggle('mobile-cta--visible', !entry.isIntersecting);
+            }
+            if (entry.target === earlyAccessSection) {
+              if (entry.isIntersecting) mobileCta.classList.remove('mobile-cta--visible');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        ctaObserver.observe(heroSection);
+        ctaObserver.observe(earlyAccessSection);
+      }
+    }());
+  </script>
+
+</body>
+
+</html>
