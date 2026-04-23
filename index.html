@@ -48,6 +48,7 @@
       </button>
       <ul class="nav__links" id="nav-links" role="list">
         <li><a href="#features">Features</a></li>
+        <li><a href="#score">Health Score</a></li>
         <li><a href="#privacy">Privacy</a></li>
         <li><a href="#insights">Insights</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -62,10 +63,22 @@
       <div class="container hero__inner">
 
         <div class="hero__text">
-          <p class="hero__label">Your Personal Finance Ledger-Keeper</p>
+          <p class="hero__label">India's First Personal Finance Health Score</p>
+
+          <div class="hero__score-block">
+            <div class="hero__score-number">74<span class="hero__score-denom">/100</span></div>
+            <div class="hero__score-badge hero__score-badge--good">
+              <span class="hero__score-dot"></span> GOOD · Keep it up
+            </div>
+          </div>
+
           <h1 class="hero__h1">Your finances, finally in your own ledger.</h1>
           <p class="hero__sub">Munshiji is a local-first finance companion. Track every account, asset, loan, and goal —
             analysed privately on your device.</p>
+          <div class="hero__instruments">
+            <span>EPF</span><span>NPS</span><span>Stocks</span>
+            <span>Mutual Funds</span><span>PPF</span><span>SSY</span>
+          </div>
 
           <form name="early-access" method="POST" data-netlify="true" class="email-form" id="hero-form">
             <input type="hidden" name="form-name" value="early-access">
@@ -78,6 +91,7 @@
             <p class="form-success" hidden aria-live="polite">You're on the list. We'll be in touch.</p>
             <p class="form-error" hidden aria-live="polite">Something went wrong. Please try again.</p>
           </form>
+          <p class="hero__social-proof">Join <strong>247</strong> early subscribers already waiting</p>
 
           <p class="hero__trust">No sign-up required. No cloud. Your data never leaves your device.</p>
         </div>
@@ -124,6 +138,42 @@
         </div>
       </div>
     </div>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,15 C150,5 250,25 400,15 C550,5 650,25 800,15 C950,5 1050,25 1200,15" stroke="#B5553C"
+          stroke-width="1.5" fill="none" opacity="0.5" />
+      </svg>
+    </div>
+
+    <!-- SCORE EXPLAINED -->
+    <section class="section score-explained" id="score" data-animate>
+      <div class="container">
+        <p class="score-explained__eyebrow">The Score, Explained</p>
+        <h2 class="score-explained__h2">One number. Three pillars.</h2>
+        <p class="score-explained__sub">
+          Munshiji's Wealth Health Score combines the three metrics that actually matter for financial health.
+        </p>
+        <div class="score-explained__pillars">
+          <div class="score-pillar score-pillar--green">
+            <div class="score-pillar__value">36%</div>
+            <h3 class="score-pillar__label">Debt-to-Asset Ratio</h3>
+            <p class="score-pillar__desc">Below 36% = Healthy. Above 50% = High risk. Know exactly where you stand.</p>
+          </div>
+          <div class="score-pillar score-pillar--navy">
+            <div class="score-pillar__value">2.1×</div>
+            <h3 class="score-pillar__label">Solvency Ratio</h3>
+            <p class="score-pillar__desc">Assets ÷ Liabilities. Above 2× = Strong. Below 1× = Warning zone.</p>
+          </div>
+          <div class="score-pillar score-pillar--orange">
+            <div class="score-pillar__value">+3.2%</div>
+            <h3 class="score-pillar__label">MoM Net Worth Growth</h3>
+            <p class="score-pillar__desc">Consistent positive growth month-on-month = compounding in action.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- SECTION DIVIDER -->
     <div class="section-divider" aria-hidden="true">
@@ -209,7 +259,7 @@
               </svg>
               <h3>Goals</h3>
             </div>
-            <p>The Scroll of Aspirations — milestones, targets, and timelines in focus</p>
+            <p>Set a target. Munshiji calculates how many months until you reach it — automatically, every month.</p>
           </div>
 
           <div class="feature-tile">
@@ -341,6 +391,30 @@
                   <div class="insight-bar-track">
                     <div class="insight-bar insight-bar--target"></div>
                   </div>
+                </div>
+              </div>
+              <p class="insight-frame__footer">Calculated entirely on your device.</p>
+            </div>
+          </div>
+
+          <div class="insight-frame insight-frame--goals" aria-label="Sample Munshiji insight: Emergency fund goal tracker" role="img">
+            <div class="insight-frame__titlebar">
+              <span class="insight-frame__dot"></span>
+              <span class="insight-frame__dot"></span>
+              <span class="insight-frame__dot"></span>
+              <span class="insight-frame__title">Munshiji Insight</span>
+            </div>
+            <div class="insight-frame__body">
+              <p class="insight-frame__tag">Emergency Fund &middot; Goal Tracker</p>
+              <p class="insight-frame__headline">You're <strong>68% of the way</strong> to your Emergency Fund.</p>
+              <p class="insight-frame__detail">At your current savings rate, you'll reach <span class="insight-amount insight-amount--target">₹10L</span> in <strong>7 months</strong>.</p>
+              <div class="insight-goal-progress">
+                <div class="insight-goal-track">
+                  <div class="insight-goal-bar"></div>
+                </div>
+                <div class="insight-goal-labels">
+                  <span>₹6.8L of ₹10L</span>
+                  <span>68%</span>
                 </div>
               </div>
               <p class="insight-frame__footer">Calculated entirely on your device.</p>
@@ -741,6 +815,32 @@
           }
         });
       });
+
+      /* --- Wealth Health Score: count-up animation --- */
+      function animateScore(el, target, duration) {
+        var start = 0;
+        var startTime = null;
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+          el.firstChild.nodeValue = Math.floor(eased * target);
+          if (progress < 1) requestAnimationFrame(step);
+          else el.firstChild.nodeValue = target;
+        }
+        requestAnimationFrame(step);
+      }
+
+      var scoreEl = document.querySelector('.hero__score-number');
+      if (scoreEl) {
+        var scoreObserver = new IntersectionObserver(function(entries) {
+          if (entries[0].isIntersecting) {
+            animateScore(scoreEl, 74, 1200);
+            scoreObserver.disconnect();
+          }
+        }, { threshold: 0.5 });
+        scoreObserver.observe(scoreEl);
+      }
 
       /* --- Sticky mobile CTA bar: show after hero, hide near #early-access --- */
       const mobileCta = document.getElementById('mobile-cta');
