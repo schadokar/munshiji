@@ -805,7 +805,13 @@
           if (errorMsg) errorMsg.hidden = true;
 
           try {
-            const res = await fetch('https://app.loops.so/api/newsletter-form/cmody2h7w2j360ixpg3zpdobh', {
+            const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+            if (isLocal) {
+              formRow.hidden = true;
+              successMsg.hidden = false;
+              return;
+            }
+            const res = await fetch('https://app.loops.so/api/newsletter-form/cmodxsfdg0suy0i01h72pijw0', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ email: emailInput.value })
