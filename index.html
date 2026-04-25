@@ -91,7 +91,7 @@
                 autocomplete="email">
               <button type="submit" class="btn-primary crayon-border">Get Early Access</button>
             </div>
-            <p class="form-success" hidden aria-live="polite">You're on the list. We'll be in touch.</p>
+            <p class="form-success" hidden aria-live="polite">You're on the list! We'll notify you at launch.</p>
             <p class="form-error" hidden aria-live="polite">Something went wrong. Please try again.</p>
           </form>
           <p class="hero__social-proof">Join <strong>247</strong> early subscribers already waiting</p>
@@ -689,7 +689,7 @@
                 autocomplete="email">
               <button type="submit" class="btn-primary">Get Early Access</button>
             </div>
-            <p class="form-success" hidden aria-live="polite">You're on the list. We'll be in touch.</p>
+            <p class="form-success" hidden aria-live="polite">You're on the list! We'll notify you at launch.</p>
             <p class="form-error" hidden aria-live="polite">Something went wrong. Please try again.</p>
           </form>
         </div>
@@ -790,30 +790,36 @@
         });
       }
 
-      /* --- Email forms: success state swap --- */
+      /* --- Email forms: Loops waitlist signup --- */
       document.querySelectorAll('.email-form').forEach(function (form) {
         form.addEventListener('submit', async function (e) {
           e.preventDefault();
           const formRow = form.querySelector('.form-row');
           const successMsg = form.querySelector('.form-success');
+          const errorMsg = form.querySelector('.form-error');
           const submitBtn = form.querySelector('button[type="submit"]');
+          const emailInput = form.querySelector('input[type="email"]');
 
           submitBtn.disabled = true;
           submitBtn.textContent = 'Sending\u2026';
+          if (errorMsg) errorMsg.hidden = true;
 
           try {
-            await fetch('/', {
+            const res = await fetch('https://app.loops.so/api/newsletter-form/cmody2h7w2j360ixpg3zpdobh', {
               method: 'POST',
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-              body: new URLSearchParams(new FormData(form)).toString()
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email: emailInput.value })
             });
-            formRow.hidden = true;
-            successMsg.hidden = false;
+            const data = await res.json();
+            if (data.success === true) {
+              formRow.hidden = true;
+              successMsg.hidden = false;
+            } else {
+              throw new Error(data.message || 'Signup failed');
+            }
           } catch (_err) {
-            // On error, re-enable so user can try again
             submitBtn.disabled = false;
             submitBtn.textContent = 'Get Early Access';
-            var errorMsg = form.querySelector('.form-error');
             if (errorMsg) errorMsg.hidden = false;
           }
         });
