@@ -21,7 +21,8 @@
     content="Local-first personal finance. Track every account, asset, loan, and goal — analysed privately on your device.">
   <meta name="twitter:image" content="https://munshiji.xyz/public/munshiji-main.png">
   <!-- PWA / Mobile -->
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#F5EFE2">
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Roboto&display=swap');</style>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
    <link rel="icon" type="image/x-icon" href="public/favicon.png">
@@ -30,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -63,40 +64,29 @@
       <div class="container hero__inner">
 
         <div class="hero__text">
-          <p class="hero__label">India's First Personal Finance Health Score</p>
+          <p class="hero__label">100% Private · Zero Cloud · Made for India</p>
 
-          <div class="hero__score-block">
-            <div class="hero__score-number">74<span class="hero__score-denom">/100</span></div>
-            <div class="hero__score-badge-row">
-              <div class="hero__score-badge hero__score-badge--good">
-                <span class="hero__score-dot"></span> GOOD · Keep it up
-              </div>
-              <a href="#score" class="hero__score-explain">How is this calculated? ↓</a>
-            </div>
-          </div>
+          <h1 class="hero__h1">Your wealth stays where it belongs — on your device.</h1>
+          <p class="hero__sub">Munshiji is a local-first finance companion. Every number, every insight, every rupee lives entirely on your machine — <strong>never sent to any server.</strong></p>
 
-          <h1 class="hero__h1">Your finances, finally in your own ledger.</h1>
-          <p class="hero__sub">Munshiji is a local-first finance companion. Track every account, asset, loan, and goal —
-            analysed privately on your device.</p>
           <div class="hero__instruments">
             <span>EPF</span><span>NPS</span><span>Stocks</span>
             <span>Mutual Funds</span><span>PPF</span><span>SSY</span>
           </div>
 
-          <form name="early-access" method="POST" data-netlify="true" class="email-form" id="hero-form">
-            <input type="hidden" name="form-name" value="early-access">
-            <div class="form-row">
-              <label for="hero-email" class="sr-only">Email address</label>
-              <input type="email" id="hero-email" name="email" placeholder="your@email.com" required
-                autocomplete="email">
-              <button type="submit" class="btn-primary crayon-border">Get Early Access</button>
-            </div>
-            <p class="form-success" hidden aria-live="polite">You're on the list! We'll notify you at launch.</p>
-            <p class="form-error" hidden aria-live="polite">Something went wrong. Please try again.</p>
-          </form>
+          <div class="newsletter-form-container">
+            <form class="newsletter-form" action="https://app.loops.so/api/newsletter-form/cmodxsfdg0suy0i01h72pijw0" method="POST">
+              <input class="newsletter-form-input" placeholder="you@example.com" required type="email" name="newsletter-form-input">
+              <button type="submit" class="newsletter-form-button">Join Waitlist</button>
+              <button type="button" class="newsletter-loading-button">Please wait&hellip;</button>
+            </form>
+            <div class="newsletter-success"><p class="newsletter-success-message">Thanks! We'll be in touch!</p></div>
+            <div class="newsletter-error"><p class="newsletter-error-message">Oops! Something went wrong, please try again</p></div>
+            <button class="newsletter-back-button" type="button">&larr; Back</button>
+          </div>
           <p class="hero__social-proof">Join <strong>247</strong> early subscribers already waiting</p>
 
-          <p class="hero__trust">Your email is for launch updates only — the app itself needs no account. No data ever leaves your device.</p>
+          <p class="hero__trust">No sign-up required. No cloud. Your data never leaves your device.</p>
         </div>
 
         <div class="hero__mascot">
@@ -145,34 +135,146 @@
     <!-- SECTION DIVIDER -->
     <div class="section-divider" aria-hidden="true">
       <svg viewBox="0 0 1200 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,15 C150,5 250,25 400,15 C550,5 650,25 800,15 C950,5 1050,25 1200,15" stroke="#1b61c9"
+        <path d="M0,15 C150,5 250,25 400,15 C550,5 650,25 800,15 C950,5 1050,25 1200,15" stroke="#B5553C"
           stroke-width="1.5" fill="none" opacity="0.5" />
       </svg>
     </div>
 
-    <!-- SCORE EXPLAINED -->
-    <section class="section score-explained" id="score" data-animate>
+    <!-- FINANCIAL PULSE -->
+    <section class="section financial-pulse" id="financial-pulse" data-animate>
       <div class="container">
-        <p class="score-explained__eyebrow">The Score, Explained</p>
-        <h2 class="score-explained__h2">One number. Three pillars.</h2>
-        <p class="score-explained__sub">
-          Munshiji's Wealth Health Score combines the three metrics that actually matter for financial health.
+        <p class="financial-pulse__eyebrow">Financial Pulse</p>
+        <h2 class="financial-pulse__h2">A score for your eyes only.</h2>
+        <p class="financial-pulse__sub">
+          Munshiji reads your EPF, NPS, PPF, and every Indian instrument you hold — all calculations run entirely on your device, never touching a server. No cloud sync, no bank login: your financial picture stays yours alone.
         </p>
-        <div class="score-explained__pillars">
-          <div class="score-pillar score-pillar--green">
-            <div class="score-pillar__value">36%</div>
-            <h3 class="score-pillar__label">Debt-to-Asset Ratio</h3>
-            <p class="score-pillar__desc">Below 36% = Healthy. Above 50% = High risk. Know exactly where you stand.</p>
+        <div class="financial-pulse__blocks">
+          <div class="fp-block fp-block--teal">
+            <div class="fp-block__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+            <h3 class="fp-block__title">Liquidity</h3>
+            <p class="fp-block__category">Emergency Funds</p>
+            <p class="fp-block__desc">Know exactly how many months your liquid savings can sustain you. See if your runway clears the 6-month mark — no mental arithmetic required.</p>
           </div>
-          <div class="score-pillar score-pillar--navy">
-            <div class="score-pillar__value">2.1×</div>
-            <h3 class="score-pillar__label">Solvency Ratio</h3>
-            <p class="score-pillar__desc">Assets ÷ Liabilities. Above 2× = Strong. Below 1× = Warning zone.</p>
+          <div class="fp-block fp-block--navy">
+            <div class="fp-block__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="fp-block__title">Safety</h3>
+            <p class="fp-block__category">Insurance &amp; Debt</p>
+            <p class="fp-block__desc">Measure your insurance cover against outstanding liabilities. Understand whether your safety net is proportional to what you have built.</p>
           </div>
-          <div class="score-pillar score-pillar--orange">
-            <div class="score-pillar__value">+3.2%</div>
-            <h3 class="score-pillar__label">MoM Net Worth Growth</h3>
-            <p class="score-pillar__desc">Consistent positive growth month-on-month = compounding in action.</p>
+          <div class="fp-block fp-block--sage">
+            <div class="fp-block__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h3 class="fp-block__title">Growth</h3>
+            <p class="fp-block__category">Asset Allocation</p>
+            <p class="fp-block__desc">See how your wealth is spread across equity, debt, real estate, and gold — and whether the mix matches your age and risk appetite.</p>
+          </div>
+        </div>
+        <div class="financial-pulse__cta">
+          <button class="fp-cta-btn" type="button">
+            How it's calculated
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,15 C150,5 250,25 400,15 C550,5 650,25 800,15 C950,5 1050,25 1200,15" stroke="#B5553C"
+          stroke-width="1.5" fill="none" opacity="0.5" />
+      </svg>
+    </div>
+
+    <!-- THE PULSE OF YOUR WEALTH -->
+    <section class="section pulse-score" id="score" data-animate>
+      <div class="container">
+        <div class="pulse-score__header">
+          <p class="pulse-score__eyebrow">The Pulse of Your Wealth</p>
+          <h2 class="pulse-score__h2">Your financial heartbeat, in one number.</h2>
+          <p class="pulse-score__sub">Munshiji synthesises your savings, debt, and goals into a single score — calculated entirely on your device.</p>
+        </div>
+
+        <div class="pulse-score__stage">
+          <div class="pulse-score__gauge">
+            <svg class="pulse-score__arc-svg" viewBox="0 0 200 118" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#B5553C" />
+                  <stop offset="50%" stop-color="#f59e0b" />
+                  <stop offset="100%" stop-color="#6B8E6F" />
+                </linearGradient>
+              </defs>
+              <!-- Track -->
+              <circle cx="100" cy="100" r="85" fill="none" stroke="#e0e2e6" stroke-width="13"
+                stroke-dasharray="296.7 237.4" stroke-linecap="round"
+                transform="rotate(170 100 100)" />
+              <!-- Fill -->
+              <circle cx="100" cy="100" r="85" fill="none" stroke="url(#gaugeGrad)" stroke-width="13"
+                stroke-dasharray="0 534.1" stroke-linecap="round"
+                transform="rotate(170 100 100)" class="pulse-score__arc-fill" />
+            </svg>
+            <div class="pulse-score__number-wrap">
+              <div class="pulse-score__number">74<span class="pulse-score__denom">/100</span></div>
+              <div class="pulse-score__badge">
+                <span class="pulse-score__dot"></span> GOOD · Keep it up
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pulse-score__influences">
+          <div class="influence-card influence-card--savings">
+            <div class="influence-card__top">
+              <svg class="influence-card__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 3h12M6 8h12M6 13l8 8M6 8a6 6 0 0 0 0 5h3a6 6 0 0 0 0-5"/>
+              </svg>
+              <h3 class="influence-card__label">Savings</h3>
+              <span class="influence-tag influence-tag--good">Strong</span>
+            </div>
+            <div class="influence-card__metric">₹18,500 <span>/mo</span></div>
+            <p class="influence-card__desc">Savings rate 2.1× your monthly target. Wealth building on track.</p>
+            <div class="influence-bar-track">
+              <div class="influence-bar" style="--fill: 84%; --bar-color: #6B8E6F;"></div>
+            </div>
+          </div>
+
+          <div class="influence-card influence-card--debt">
+            <div class="influence-card__top">
+              <svg class="influence-card__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                <line x1="1" y1="10" x2="23" y2="10"/>
+              </svg>
+              <h3 class="influence-card__label">Debt</h3>
+              <span class="influence-tag influence-tag--good">Healthy</span>
+            </div>
+            <div class="influence-card__metric">36% <span>debt ratio</span></div>
+            <p class="influence-card__desc">Debt-to-asset below 40% threshold. Solvency at 2.1× — solid ground.</p>
+            <div class="influence-bar-track">
+              <div class="influence-bar" style="--fill: 64%; --bar-color: #1b61c9;"></div>
+            </div>
+          </div>
+
+          <div class="influence-card influence-card--goals">
+            <div class="influence-card__top">
+              <svg class="influence-card__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+              <h3 class="influence-card__label">Goals</h3>
+              <span class="influence-tag influence-tag--ok">On Track</span>
+            </div>
+            <div class="influence-card__metric">68% <span>complete</span></div>
+            <p class="influence-card__desc">Emergency fund 7 months from target. Retirement SIP close to ideal.</p>
+            <div class="influence-bar-track">
+              <div class="influence-bar" style="--fill: 68%; --bar-color: #f59e0b;"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -181,7 +283,7 @@
     <!-- SECTION DIVIDER -->
     <div class="section-divider" aria-hidden="true">
       <svg viewBox="0 0 1200 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,15 C150,5 250,25 400,15 C550,5 650,25 800,15 C950,5 1050,25 1200,15" stroke="#1b61c9"
+        <path d="M0,15 C150,5 250,25 400,15 C550,5 650,25 800,15 C950,5 1050,25 1200,15" stroke="#B5553C"
           stroke-width="1.5" fill="none" opacity="0.5" />
       </svg>
     </div>
@@ -669,7 +771,7 @@
     <!-- SECTION DIVIDER -->
     <div class="section-divider" aria-hidden="true">
       <svg viewBox="0 0 1200 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,15 C150,5 400,25 600,12 C800,4 1000,22 1200,15" stroke="#1b61c9" stroke-width="1.5" fill="none"
+        <path d="M0,15 C150,5 400,25 600,12 C800,4 1000,22 1200,15" stroke="#B5553C" stroke-width="1.5" fill="none"
           opacity="0.5" />
       </svg>
     </div>
@@ -681,17 +783,16 @@
           <h2>Be first to know when Munshiji launches.</h2>
           <p>Join the early-access list. No spam. Unsubscribe anytime.</p>
 
-          <form name="early-access" method="POST" data-netlify="true" class="email-form" id="cta-form">
-            <input type="hidden" name="form-name" value="early-access">
-            <div class="form-row">
-              <label for="cta-email" class="sr-only">Email address</label>
-              <input type="email" id="cta-email" name="email" placeholder="your@email.com" required
-                autocomplete="email">
-              <button type="submit" class="btn-primary">Get Early Access</button>
-            </div>
-            <p class="form-success" hidden aria-live="polite">You're on the list! We'll notify you at launch.</p>
-            <p class="form-error" hidden aria-live="polite">Something went wrong. Please try again.</p>
-          </form>
+          <div class="newsletter-form-container">
+            <form class="newsletter-form" action="https://app.loops.so/api/newsletter-form/cmodxsfdg0suy0i01h72pijw0" method="POST">
+              <input class="newsletter-form-input" placeholder="you@example.com" required type="email" name="newsletter-form-input">
+              <button type="submit" class="newsletter-form-button">Join Waitlist</button>
+              <button type="button" class="newsletter-loading-button">Please wait&hellip;</button>
+            </form>
+            <div class="newsletter-success"><p class="newsletter-success-message">Thanks! We'll be in touch!</p></div>
+            <div class="newsletter-error"><p class="newsletter-error-message">Oops! Something went wrong, please try again</p></div>
+            <button class="newsletter-back-button" type="button">&larr; Back</button>
+          </div>
         </div>
       </div>
     </section>
@@ -790,46 +891,93 @@
         });
       }
 
-      /* --- Email forms: Loops waitlist signup --- */
-      document.querySelectorAll('.email-form').forEach(function (form) {
-        form.addEventListener('submit', async function (e) {
-          e.preventDefault();
-          const formRow = form.querySelector('.form-row');
-          const successMsg = form.querySelector('.form-success');
-          const errorMsg = form.querySelector('.form-error');
-          const submitBtn = form.querySelector('button[type="submit"]');
-          const emailInput = form.querySelector('input[type="email"]');
+      /* --- Loops newsletter forms --- */
+      function submitHandler(event) {
+        event.preventDefault();
+        var container = event.target.parentNode;
+        var form = container.querySelector(".newsletter-form");
+        var formInput = container.querySelector(".newsletter-form-input");
+        var success = container.querySelector(".newsletter-success");
+        var errorContainer = container.querySelector(".newsletter-error");
+        var errorMessage = container.querySelector(".newsletter-error-message");
+        var backButton = container.querySelector(".newsletter-back-button");
+        var submitButton = container.querySelector(".newsletter-form-button");
+        var loadingButton = container.querySelector(".newsletter-loading-button");
 
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Sending\u2026';
-          if (errorMsg) errorMsg.hidden = true;
+        const rateLimit = () => {
+          errorContainer.style.display = "flex";
+          errorMessage.innerText = "Too many signups, please try again in a little while";
+          submitButton.style.display = "none";
+          formInput.style.display = "none";
+          backButton.style.display = "block";
+        };
 
-          try {
-            const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
-            if (isLocal) {
-              formRow.hidden = true;
-              successMsg.hidden = false;
-              return;
-            }
-            const res = await fetch('https://app.loops.so/api/newsletter-form/cmodxsfdg0suy0i01h72pijw0', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ email: emailInput.value })
-            });
-            const data = await res.json();
-            if (data.success === true) {
-              formRow.hidden = true;
-              successMsg.hidden = false;
+        var time = new Date();
+        var timestamp = time.valueOf();
+        var previousTimestamp = localStorage.getItem("loops-form-timestamp");
+        if (previousTimestamp && Number(previousTimestamp) + 60000 > timestamp) {
+          rateLimit();
+          return;
+        }
+        localStorage.setItem("loops-form-timestamp", timestamp);
+
+        submitButton.style.display = "none";
+        loadingButton.style.display = "flex";
+
+        var formBody = "userGroup=&mailingLists=cmody2h7w2j360ixpg3zpdobh&email=" + encodeURIComponent(formInput.value);
+
+        fetch(event.target.action, {
+          method: "POST",
+          body: formBody,
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        })
+          .then((res) => [res.ok, res.json(), res])
+          .then(([ok, dataPromise, res]) => {
+            if (ok) {
+              success.style.display = "flex";
+              form.reset();
             } else {
-              throw new Error(data.message || 'Signup failed');
+              dataPromise.then(data => {
+                errorContainer.style.display = "flex";
+                errorMessage.innerText = data.message ? data.message : res.statusText;
+              });
             }
-          } catch (_err) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Get Early Access';
-            if (errorMsg) errorMsg.hidden = false;
-          }
-        });
-      });
+          })
+          .catch(error => {
+            if (error.message === "Failed to fetch") { rateLimit(); return; }
+            errorContainer.style.display = "flex";
+            if (error.message) errorMessage.innerText = error.message;
+            localStorage.setItem("loops-form-timestamp", '');
+          })
+          .finally(() => {
+            formInput.style.display = "none";
+            loadingButton.style.display = "none";
+            backButton.style.display = "block";
+          });
+      }
+      function resetFormHandler(event) {
+        var container = event.target.parentNode;
+        var formInput = container.querySelector(".newsletter-form-input");
+        var success = container.querySelector(".newsletter-success");
+        var errorContainer = container.querySelector(".newsletter-error");
+        var errorMessage = container.querySelector(".newsletter-error-message");
+        var backButton = container.querySelector(".newsletter-back-button");
+        var submitButton = container.querySelector(".newsletter-form-button");
+        success.style.display = "none";
+        errorContainer.style.display = "none";
+        errorMessage.innerText = "Oops! Something went wrong, please try again";
+        backButton.style.display = "none";
+        formInput.style.display = "";
+        submitButton.style.display = "";
+      }
+      var formContainers = document.getElementsByClassName("newsletter-form-container");
+      for (var i = 0; i < formContainers.length; i++) {
+        var formContainer = formContainers[i];
+        if (formContainer.classList.contains('newsletter-handlers-added')) continue;
+        formContainer.querySelector(".newsletter-form").addEventListener("submit", submitHandler);
+        formContainer.querySelector(".newsletter-back-button").addEventListener("click", resetFormHandler);
+        formContainer.classList.add("newsletter-handlers-added");
+      }
 
       /* --- Wealth Health Score: count-up animation --- */
       function animateScore(el, target, duration) {
@@ -846,15 +994,15 @@
         requestAnimationFrame(step);
       }
 
-      var scoreEl = document.querySelector('.hero__score-number');
-      if (scoreEl) {
-        var scoreObserver = new IntersectionObserver(function(entries) {
+      var pulseScoreEl = document.querySelector('.pulse-score__number');
+      if (pulseScoreEl) {
+        var pulseScoreObserver = new IntersectionObserver(function(entries) {
           if (entries[0].isIntersecting) {
-            animateScore(scoreEl, 74, 1200);
-            scoreObserver.disconnect();
+            animateScore(pulseScoreEl, 74, 1200);
+            pulseScoreObserver.disconnect();
           }
         }, { threshold: 0.5 });
-        scoreObserver.observe(scoreEl);
+        pulseScoreObserver.observe(pulseScoreEl);
       }
 
       /* --- Sticky mobile CTA bar: show after hero, hide near #early-access --- */
